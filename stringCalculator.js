@@ -1,4 +1,7 @@
 function add(input) {
-  return 0;
+
+    if (input === "") return 0;
+    return Number(input);
+
 }
 module.exports = { add };
