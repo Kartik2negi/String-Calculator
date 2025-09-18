@@ -1,5 +1,5 @@
 function escapeRegExp(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function add(input) {
@@ -17,6 +17,10 @@ function add(input) {
 
     const nums = numbersPart.split(separator).map(n => Number(n.trim()));
     const negatives = nums.filter(n => n < 0);
+
+    if (negatives.length) {
+        throw new Error(`negative numbers not allowed ${negatives.join(',')}`);
+    }
 
     return nums.reduce((sum, n) => sum + n, 0);
 }
