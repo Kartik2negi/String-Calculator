@@ -23,4 +23,9 @@ describe('String Calculator', () => {
     expect(add('1\n2,3')).toBe(6);
   });
 
+  it('supports custom delimiter', () => {
+    expect(add('//;\n1;2')).toBe(3);
+    expect(add('//|\n2|3|4')).toBe(9);
+  });
+
 });
