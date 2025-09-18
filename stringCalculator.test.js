@@ -28,4 +28,8 @@ describe('String Calculator', () => {
     expect(add('//|\n2|3|4')).toBe(9);
   });
 
+  it('throws error for negatives with all listed', () => {
+    expect(() => add('2,-4,3,-5')).toThrow('negative numbers not allowed -4,-5');
+  });
+
 });
